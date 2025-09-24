@@ -1,0 +1,43 @@
+package com.miapp;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class LoginForm3 {
+    private JPanel rootPanel;
+
+    public LoginForm3() {
+        rootPanel = new JPanel(new BorderLayout());
+
+        JTabbedPane tabbedPane = new JTabbedPane();
+
+        JPanel loginPanel = new JPanel(new GridLayout(4,2,5,5));
+        loginPanel.add(new JLabel("Usuario:")); loginPanel.add(new JTextField());
+        loginPanel.add(new JLabel("Contraseña:")); loginPanel.add(new JPasswordField());
+        JCheckBox terms = new JCheckBox("Aceptar términos"); loginPanel.add(terms);
+        loginPanel.add(new JButton("Acceder"));
+        tabbedPane.add("Login", loginPanel);
+
+        JPanel registerPanel = new JPanel(new GridLayout(3,2,5,5));
+        registerPanel.add(new JLabel("Nuevo usuario:")); registerPanel.add(new JTextField());
+        registerPanel.add(new JLabel("Contraseña:")); registerPanel.add(new JPasswordField());
+        registerPanel.add(new JButton("Registrar"));
+        tabbedPane.add("Registro", registerPanel);
+
+        rootPanel.add(tabbedPane, BorderLayout.CENTER);
+
+        JPanel bottomPanel = new JPanel();
+        JProgressBar progressBar = new JProgressBar();
+        progressBar.setStringPainted(true);
+        bottomPanel.add(progressBar);
+
+        JSpinner spinner = new JSpinner(new SpinnerNumberModel(1,1,10,1));
+        bottomPanel.add(spinner);
+
+        rootPanel.add(bottomPanel, BorderLayout.SOUTH);
+    }
+
+    public JPanel getRootPanel() {
+        return rootPanel;
+    }
+}

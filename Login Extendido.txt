@@ -1,0 +1,41 @@
+package com.miapp;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class LoginForm2 {
+    private JPanel rootPanel;
+
+    public LoginForm2() {
+        rootPanel = new JPanel(new BorderLayout());
+
+        JLabel logoLabel = new JLabel("MI APP EXTENDIDA", SwingConstants.CENTER);
+        logoLabel.setFont(new Font("Arial", Font.BOLD, 26));
+        logoLabel.setForeground(Color.MAGENTA);
+        rootPanel.add(logoLabel, BorderLayout.NORTH);
+
+        JPanel formPanel = new JPanel(new GridLayout(4,2,5,5));
+        JTextField userField = new JTextField();
+        JPasswordField passField = new JPasswordField();
+        formPanel.add(new JLabel("Usuario:")); formPanel.add(userField);
+        formPanel.add(new JLabel("Contraseña:")); formPanel.add(passField);
+
+        JCheckBox termsCheck = new JCheckBox("Aceptar términos y condiciones");
+        JRadioButton rememberRadio = new JRadioButton("Recordar usuario");
+        formPanel.add(termsCheck); formPanel.add(rememberRadio);
+
+        JComboBox<String> languageCombo = new JComboBox<>(new String[]{"Español","Inglés"});
+        formPanel.add(new JLabel("Idioma:")); formPanel.add(languageCombo);
+
+        rootPanel.add(formPanel, BorderLayout.CENTER);
+
+        JButton loginBtn = new JButton("Acceder");
+        loginBtn.setBackground(Color.ORANGE);
+        loginBtn.setForeground(Color.BLACK);
+        rootPanel.add(loginBtn, BorderLayout.SOUTH);
+    }
+
+    public JPanel getRootPanel() {
+        return rootPanel;
+    }
+}

@@ -1,0 +1,52 @@
+package com.miapp;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class LoginForm1 {
+    private JPanel rootPanel;
+
+    public LoginForm1() {
+        rootPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5,5,5,5);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        JLabel logoLabel = new JLabel("MI APP", SwingConstants.CENTER);
+        logoLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        logoLabel.setForeground(Color.BLUE);
+        gbc.gridx = 0; gbc.gridy = 0; gbc.gridwidth = 2;
+        rootPanel.add(logoLabel, gbc);
+
+        gbc.gridwidth = 1;
+        gbc.gridx = 0; gbc.gridy = 1;
+        rootPanel.add(new JLabel("Usuario:"), gbc);
+
+        JTextField userField = new JTextField(15);
+        userField.setToolTipText("Introduce tu usuario");
+        gbc.gridx = 1;
+        rootPanel.add(userField, gbc);
+
+        gbc.gridx = 0; gbc.gridy = 2;
+        rootPanel.add(new JLabel("Contraseña:"), gbc);
+
+        JPasswordField passField = new JPasswordField(15);
+        passField.setToolTipText("Introduce tu contraseña");
+        gbc.gridx = 1;
+        rootPanel.add(passField, gbc);
+
+        gbc.gridx = 0; gbc.gridy = 3; gbc.gridwidth = 2;
+        JCheckBox termsCheck = new JCheckBox("Aceptar términos y condiciones");
+        rootPanel.add(termsCheck, gbc);
+
+        gbc.gridy = 4;
+        JButton loginBtn = new JButton("Acceder");
+        loginBtn.setBackground(Color.GREEN);
+        loginBtn.setForeground(Color.WHITE);
+        rootPanel.add(loginBtn, gbc);
+    }
+
+    public JPanel getRootPanel() {
+        return rootPanel;
+    }
+}

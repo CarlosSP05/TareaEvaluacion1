@@ -1,0 +1,34 @@
+package com.miapp;
+
+import javax.swing.*;
+
+public class main {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            // Ventana 1: Clásica
+            JFrame frame1 = new JFrame("Login Clásico");
+            frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame1.setContentPane(new LoginForm1().getRootPanel());
+            frame1.pack();
+            frame1.setLocation(100, 100);
+            frame1.setVisible(true);
+
+            // Ventana 2: Extendida
+            JFrame frame2 = new JFrame("Login Extendido");
+            frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame2.setContentPane(new LoginForm2().getRootPanel());
+            frame2.pack();
+            frame2.setLocation(500, 100);
+            frame2.setVisible(true);
+
+            // Ventana 3: Creativa
+            JFrame frame3 = new JFrame("Login Creativo");
+            frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame3.setContentPane(new LoginForm3().getRootPanel());
+            frame3.pack();
+            frame3.setLocation(900, 100);
+            frame3.setVisible(true);
+        });
+    }
+}
+
